@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/tinezmatias/prisma-utils/compare/befish-prismerge@1.0.0...befish-prismerge@1.0.1) (2022-06-23)
+
+
+### :bug: Bug Fixes
+
+* command ([69bca53](https://github.com/tinezmatias/prisma-utils/commit/69bca53b6d570436baf8d8d2615723633ddefbaa))
+
 # 1.0.0 (2022-06-23)
 
 
