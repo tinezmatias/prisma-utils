@@ -33,7 +33,7 @@ jobs:
         with:
           targets: build
           parallel: 'true'
-          projects: nestjs-prisma,prismerge
+          projects: prismerge
 
       - name: Release
         uses: mansagroup/nrwl-nx-action@v2.1.0

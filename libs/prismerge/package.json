@@ -1,6 +1,6 @@
 {
-  "name": "@prisma-utils/prismerge",
-  "version": "1.3.2",
+  "name": "befish-prismerge",
+  "version": "1.0.0",
   "main": "src/index.js",
   "generators": "./generators.json",
   "publishConfig": {
@@ -8,10 +8,5 @@
   },
   "bin": {
     "prismerge": "./src/bin/prismerge.js"
-  },
-  "author": {
-    "name": "Johannes Schobel",
-    "email": "johannes.schobel@googlemail.com",
-    "url": "https://github.com/johannesschobel"
   }
 }
