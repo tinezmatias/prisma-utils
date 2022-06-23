@@ -54,6 +54,14 @@
     },
     "release": {
       "executor": "@ng-easy/builders:semantic-release"
+    },
+    "run-script": {
+      "executor": "@nrwl/workspace:run-commands",
+      "configurations": {
+        "my-script": {
+          "commands": ["ts-node libs/prismerge/src/bin/prismerge.ts"]
+        }
+      }
     }
   },
   "tags": []

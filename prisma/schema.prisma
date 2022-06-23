@@ -14,9 +14,7 @@ datasource db {
 }
 
 model User {
-  id Int @id @default(autoincrement())
-
-
+  id       Int       @id @default(autoincrement())
   name     String
   articles Article[]
 
@@ -24,13 +22,10 @@ model User {
 }
 
 model Article {
-  id Int @id @default(autoincrement())
-
-
-  title String
-  text  String
-
-  author   User @relation(fields: [authorId], references: [id])
+  id       Int    @id @default(autoincrement())
+  title    String
+  text     String
+  author   User   @relation(fields: [authorId], references: [id])
   authorId Int
 
   @@map("articles")

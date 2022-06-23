@@ -5,16 +5,23 @@
 // -------------------------------------
 
 model Article {
-  id Int @id @default(autoincrement())
-
-
-  title String
-  text  String
-
-  author   User @relation(fields: [authorId], references: [id])
+  id       Int    @id @default(autoincrement())
+  title    String
+  text     String
+  author   User   @relation(fields: [authorId], references: [id])
   authorId Int
 
   @@map("articles")
+}
+
+model User {
+  lastName String
+  wallet   String
+  id       Int       @id @default(autoincrement())
+  name     String
+  articles Article[]
+
+  @@map("users")
 }
 
 generator client {
@@ -24,14 +31,4 @@ generator client {
 datasource db {
   provider = "sqlite"
   url      = "file:./dev.db"
-}
-
-model User {
-  id Int @id @default(autoincrement())
-
-
-  name     String
-  articles Article[]
-
-  @@map("users")
 }
