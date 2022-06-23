@@ -1,3 +1,12 @@
+# [1.6.0](https://github.com/tinezmatias/prisma-utils/compare/@prisma-utils/nestjs-prisma@1.5.2...@prisma-utils/nestjs-prisma@1.6.0) (2022-06-23)
+
+
+### :sparkles: Features
+
+* refactor for mixer ([149baf9](https://github.com/tinezmatias/prisma-utils/commit/149baf9f833e50daf65e515ce8f28266b7c374b6))
+* refactor json ([b38df0e](https://github.com/tinezmatias/prisma-utils/commit/b38df0edc8ca66392f79910fa9e52d6ab51449f1))
+* workflow ([79f98af](https://github.com/tinezmatias/prisma-utils/commit/79f98af9a6643b35566544b6c6b41f812688a6e7))
+
 ## [1.5.2](https://github.com/prisma-utils/prisma-utils/compare/@prisma-utils/nestjs-prisma@1.5.1...@prisma-utils/nestjs-prisma@1.5.2) (2022-06-19)
 
 
