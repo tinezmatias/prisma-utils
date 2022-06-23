@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-import * as command from 'commander';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const command = require('commander');
 import * as process from 'process';
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { execSync } from 'child_process';
@@ -68,7 +69,7 @@ const mixer = (schemaString: string) => {
 };
 
 const bootstrap = () => {
-  command.program
+  command
     .version(
       // eslint-disable-next-line @typescript-eslint/no-var-requires
       require('../../package.json').version,
@@ -87,7 +88,7 @@ const bootstrap = () => {
     .option('-nF, --no-format', 'Format the Prisma File after generation.')
     .parse(process.argv);
 
-  const options = command.program.opts();
+  const options = command.opts();
 
   const basePath = path.join(process.cwd());
   const inputPath = path.join(basePath, options.input);
