@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/tinezmatias/prisma-utils/compare/@prisma-utils/nestjs-prisma@1.6.0...@prisma-utils/nestjs-prisma@1.6.1) (2022-06-23)
+
+
+### :bug: Bug Fixes
+
+* command ([69bca53](https://github.com/tinezmatias/prisma-utils/commit/69bca53b6d570436baf8d8d2615723633ddefbaa))
+
 # [1.6.0](https://github.com/tinezmatias/prisma-utils/compare/@prisma-utils/nestjs-prisma@1.5.2...@prisma-utils/nestjs-prisma@1.6.0) (2022-06-23)
 
 
