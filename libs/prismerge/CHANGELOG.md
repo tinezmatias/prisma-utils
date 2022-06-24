@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/tinezmatias/prisma-utils/compare/befish-prismerge@1.0.1...befish-prismerge@1.1.0) (2022-06-24)
+
+
+### :sparkles: Features
+
+* sort schema ([83fe21d](https://github.com/tinezmatias/prisma-utils/commit/83fe21d375fb08065a3f49d013435270abb8def4))
+
 ## [1.0.1](https://github.com/tinezmatias/prisma-utils/compare/befish-prismerge@1.0.0...befish-prismerge@1.0.1) (2022-06-23)
 
 
