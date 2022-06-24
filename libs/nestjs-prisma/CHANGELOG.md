@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/tinezmatias/prisma-utils/compare/@prisma-utils/nestjs-prisma@1.6.1...@prisma-utils/nestjs-prisma@1.7.0) (2022-06-24)
+
+
+### :sparkles: Features
+
+* sort schema ([83fe21d](https://github.com/tinezmatias/prisma-utils/commit/83fe21d375fb08065a3f49d013435270abb8def4))
+
 ## [1.6.1](https://github.com/tinezmatias/prisma-utils/compare/@prisma-utils/nestjs-prisma@1.6.0...@prisma-utils/nestjs-prisma@1.6.1) (2022-06-23)
 
 
