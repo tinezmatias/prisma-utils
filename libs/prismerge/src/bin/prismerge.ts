@@ -47,23 +47,34 @@ const mixer = (schemaString: string) => {
       continue;
     }
 
-    prismaAtrributes[operatorKey][operatorName].push(item);
+    prismaAtrributes[operatorKey][operatorName].push(item.trim());
   }
 
   let prismaSchema = warningString; // warning
 
-  for (const optType in prismaAtrributes) {
-    if (Object.prototype.hasOwnProperty.call(prismaAtrributes, optType)) {
-      const optObj = prismaAtrributes[optType];
-      for (const optName in optObj) {
-        if (Object.prototype.hasOwnProperty.call(optObj, optName)) {
-          const lines = optObj[optName];
-          const string = `${optType} ${optName} {\n${lines.join('\n')}\n}\n`;
-          prismaSchema = prismaSchema + string;
-        }
-      }
-    }
-  }
+  const optTypes = Object.keys(prismaAtrributes).sort((first, second) => {
+    if (first === 'enum' && second === 'generator') return 1;
+    if (first > second) return 1;
+    if (first < second) return -1;
+    return 0;
+  });
+
+  // models, generators, enums
+  optTypes.forEach((optType) => {
+    // { User: [...] }
+    const opts = prismaAtrributes[optType];
+    // [User, RoleType, ...]
+    const optNames = Object.keys(opts).sort();
+
+    optNames.forEach((optName) => {
+      // ['name String', 'email String', ...]
+      const opt = (opts[optName] as string[]).sort();
+      const optString = opt.join('\n');
+
+      prismaSchema =
+        prismaSchema + `${optType} ${optName} {\n${optString}\n}\n`;
+    });
+  });
 
   return prismaSchema;
 };
@@ -131,8 +142,6 @@ const bootstrap = () => {
 
       prismaSchemaInputFiles.forEach((schemaEntry: string) => {
         const schemaFilePaths = glob.sync(schemaEntry);
-
-        console.log('>>>>>>> schemaFilePaths', schemaFilePaths);
 
         schemaFilePaths.forEach((schemaFilePath: string) => {
           const content = readFileSync(schemaFilePath, 'utf8');

@@ -4,29 +4,39 @@
 // DO NOT MANUALLY EDIT THIS FILE!
 // -------------------------------------
 
+datasource db {
+  provider = "postgres"
+  url      = "file:./dev.db"
+}
+
 generator client {
   provider = "prisma-client-js"
 }
 
-datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+enum AlgorandType {
+  ALGORAND
+  ETHEREUM
 }
 
-model User {
-  id       Int       @id @default(autoincrement())
-  name     String
-  articles Article[]
-
-  @@map("users")
+enum RoleType {
+  ADMIN
+  USER
 }
 
 model Article {
-  id       Int    @id @default(autoincrement())
-  title    String
-  text     String
   author   User   @relation(fields: [authorId], references: [id])
   authorId Int
+  id       Int    @id @default(autoincrement())
+  text     String
+  title    String
 
   @@map("articles")
+}
+
+model User {
+  articles Article[]
+  id       Int       @id @default(autoincrement())
+  name     String
+
+  @@map("users")
 }

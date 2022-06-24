@@ -4,11 +4,11 @@
 // DO NOT MANUALLY EDIT THIS FILE!
 // -------------------------------------
 
-generator client {
-  provider = "prisma-client-js"
+datasource db {
+  provider = "postgres"
+  url      = "file:./dev.db"
 }
 
-datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+generator client {
+  provider = "prisma-client-js"
 }

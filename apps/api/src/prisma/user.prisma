@@ -1,8 +1,18 @@
 model User {
-  __id__
+    __id__
 
-  name String
-  articles Article[]
+    name     String
+    articles Article[]
 
-  @@map("users")
+    @@map("users")
+}
+
+enum RoleType {
+    ADMIN
+    USER
+}
+
+enum AlgorandType {
+    ALGORAND
+    ETHEREUM
 }
